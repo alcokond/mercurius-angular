@@ -1,5 +1,96 @@
+@import url("https://fonts.googleapis.com/css?family=Montserrat:500,600,700");
+
 :host{
-    height: 2rem;
-    padding: 0 0.75em;
+  border:0;
+  padding: 8px 16px;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  min-width: 145px;
+  min-height: 32px;
+  border-radius: 8px;
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 17px;
+  text-align: center;
+
+  &.merc-primary{
+  color: #ffffff;
+  background: linear-gradient(0deg, #221987 40%, #4A3CDB 100%);
+  box-shadow: 0px 0px 10px rgba(74, 60, 219, 0.4);
+  }
+  
+  &.merc-secondary{
+  background: #ffffff;
+  border: 1.5px solid #4A3CDB;
+  color: #4A3CDB;
+  }
 
 }
+
+:host::before {
+    &.merc-primary{
+    position: absolute;
+    content: "";
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: #221987;
+    z-index: -1;
+    transition: opacity 0.5s linear;
+    opacity: 0;
+    }
+}
+
+:host:hover{
+    &.merc-secondary{
+    color: #221987;
+    border: 1.5px solid #221987;
+    background: #F9F9F9;
+    transition: all 0.35s;
+    }
+}
+:host:hover::before {
+    &.merc-primary{
+        opacity: 1;
+    }
+    
+}
+  
+:host:disabled{
+    &.merc-primary{
+    pointer-events: none;
+    color: #ffffff;
+    border:0;
+    padding: 8px 24px;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+    min-width: 145px;
+    min-height: 32px;
+    background: var(#F2F1FC);
+    box-shadow: 0px 0px 0px;
+    border-radius: 8px;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 17px;
+    text-align: center;
+    }
+    
+    
+  }
