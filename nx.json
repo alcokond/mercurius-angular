@@ -8,13 +8,8 @@
     "default": {
       "runner": "@nrwl/nx-cloud",
       "options": {
-        "cacheableOperations": [
-          "build",
-          "lint",
-          "test",
-          "e2e"
-        ],
-        "accessToken": "ZjE3ZTEwOWMtMTljOS00YTc5LTllMjEtZTUyN2U0M2I2NzNjfHJlYWQtd3JpdGU="
+        "cacheableOperations": [],
+        "accessToken": "YWZjODZmMzYtY2I2Ny00NzkwLTgzNmMtZmJiMGYyZjc2NWEwfHJlYWQtd3JpdGU="
       }
     }
   },
@@ -47,6 +42,13 @@
         "{workspaceRoot}/.eslintrc.json",
         "{workspaceRoot}/.eslintignore"
       ]
+    },
+    "build-storybook": {
+      "inputs": [
+        "default",
+        "^production",
+        "!{projectRoot}/.storybook/**/*"
+      ]
     }
   },
   "namedInputs": {
@@ -59,7 +61,9 @@
       "!{projectRoot}/**/?(*.)+(spec|test).[jt]s?(x)?(.snap)",
       "!{projectRoot}/tsconfig.spec.json",
       "!{projectRoot}/jest.config.[jt]s",
-      "!{projectRoot}/.eslintrc.json"
+      "!{projectRoot}/.eslintrc.json",
+      "!{projectRoot}/.storybook/**/*",
+      "!{projectRoot}/**/*.stories.@(js|jsx|ts|tsx|mdx)"
     ],
     "sharedGlobals": []
   },
@@ -78,5 +82,6 @@
       "style": "scss"
     }
   },
-  "defaultProject": "mercurius-angular"
+  "defaultProject": "mercurius-angular",
+  "defaultBase": "master"
 }
