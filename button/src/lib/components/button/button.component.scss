@@ -1,6 +1,84 @@
 @import url("https://fonts.googleapis.com/css?family=Montserrat:500,600,700");
-
-:host{
+:host {
+    /*Colors*/
+  /*primary*/
+  --primary: #4A3CDB;
+  --primary-opacity-60: rgba(74, 60, 219, 0.6);
+  --primary-opacity-40: rgba(74, 60, 219, 0.4);
+  --primary-opacity-20: rgba(74, 60, 219, 0.2);
+  --primary-opacity-10: rgba(74, 60, 219, 0.1);
+  --primary-solid-1: #9890EB;
+  --primary-solid-2: #BEBAF2;
+  --primary-solid-3: #E5E3FA;
+  --primary-solid-4: #F2F1FC;
+  --primary-shade-1: #2F22BA;
+  --primary-shade-2: #221987;
+  --primary-shade-3: #151055;
+  --primary-shade-4: #090622;
+  /*secondary*/
+  --secondary: #FF0A6C;
+  --secondary-opacity-60: rgba(255, 10, 108, 0.6);
+  --secondary-opacity-40: rgba(255, 10, 108, 0.4);
+  --secondary-opacity-20: rgba(255, 10, 108, 0.2);
+  --secondary-opacity-10: rgba(255, 10, 108, 0.1);
+  --secondary-solid-1: #FF73AB;
+  --secondary-solid-2: #FFA8CB;
+  --secondary-solid-3: #FFDCEA;
+  --secondary-solid-4: #FFEEF5;
+  --secondary-shade-1: #D00053;
+  --secondary-shade-2: #98003D;
+  --secondary-shade-3: #5F0026;
+  --secondary-shade-4: #26000F;
+  /*complementary*/
+  --complementary: #F9E100;
+  --complementary-opacity-60: rgba(249, 225, 0, 0.6);
+  --complementary-opacity-40: rgba(249, 225, 0, 0.4);
+  --complementary-opacity-20: rgba(249, 225, 0, 0.2);
+  --complementary-opacity-10: rgba(249, 225, 0, 0.1);
+  --complementary-solid-1: #FFF06A;
+  --complementary-solid-2: #FFF6A2;
+  --complementary-solid-3: #FEF9CC;
+  --complementary-solid-4: #FFFDEC;
+  /*grayscale*/
+  --grayscale-1: #181B21;
+  --grayscale-2: #717C96;
+  --grayscale-3: #B9BECB;
+  --grayscale-4: #D7DAE1;
+  --grayscale-5: #EBECF0;
+  --grayscale-6: #F9F9F9;
+  --grayscale-7: #FFFFFF;
+  /*gradients*/
+  --linear-gradient-1: linear-gradient(90deg, #4A3DDB -0.18%, #A921A1 52.54%, #FF086C 100.05%);
+  --linear-gradient-2: linear-gradient(90deg, #4A3DDB -0.18%, #E33FD9 100.05%);
+  --linear-gradient-3: linear-gradient(0deg, #221987 40%, #4A3CDB 100%);
+  --linear-gradient-4: linear-gradient(88.89deg, #221987 7.66%, rgba(74, 60, 219, 0.8) 93.32%);
+  --linear-gradient-5: linear-gradient(46.39deg, #221987 12.06%, #7064E3 87.77%);
+  /*states*/
+  /*success*/
+  --success-primary: #38A57E;
+  --success-dark: #AFDBCB;
+  --success-light: #EBF6F2;
+  /*error*/
+  --error-primary: #BD033B;
+  --error-dark: #E59AB1;
+  --error-light: #F8E6EB;
+  /*warning*/
+  --warning-primary: #F9B100;
+  --warning-dark: #FDE099;
+  --warning-light: #FEF7E5;
+  /*neutral*/
+  --neutral-primary: #4A3CDB;
+  --neutral-dark: #BEBAF2;
+  --neutral-light: #F2F1FC;
+  /*Text*/
+  /*weight*/
+  --light: 300;
+  --regular: 400;
+  --medium: 500;
+  --semibold: 600;
+  --bold: 700;
+}
+:host(.merc-secondary){
   border:0;
   padding: 8px 16px;
   position: relative;
@@ -20,20 +98,87 @@
   font-size: 14px;
   line-height: 17px;
   text-align: center;
-
-  &.merc-primary{
-  color: #ffffff;
-  background: linear-gradient(0deg, #221987 40%, #4A3CDB 100%);
-  box-shadow: 0px 0px 10px rgba(74, 60, 219, 0.4);
-  }
   
-  &.merc-secondary{
   background: #ffffff;
   border: 1.5px solid #4A3CDB;
   color: #4A3CDB;
-  }
 
 }
+
+:host(.merc-subtle){
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 8px 24px;
+    gap: 16px;
+    position: relative;
+    min-width: 145px;
+    min-height: 32px;
+    background: var(--grayscale-7);
+    border: 1.5px solid #B9BECB;
+    border-radius: 8px;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: var( --semibold);
+    font-size: 14px;
+    line-height: 17px;
+    text-align: center;
+    color: #4A3CDB;
+  }
+  
+  
+  :host(.merc-subtle):hover {
+    background: var(--grayscale-6);
+    color: #221987;
+    border: none;
+    transition: all 0.35s;
+    
+  }
+
+:host(.merc-primary) {
+    color: #ffffff;
+    border:0;
+    padding: 8px 16px;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+    min-width: 145px;
+    min-height: 32px;
+    background: linear-gradient(0deg, #221987 40%, #4A3CDB 100%);
+    box-shadow: 0px 0px 10px rgba(74, 60, 219, 0.4);
+    border-radius: 8px;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 17px;
+    text-align: center;
+  
+    &::before {
+      position: absolute;
+      content: "";
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      background: #221987;
+      z-index: -1;
+      transition: opacity 0.5s linear;
+      opacity: 0;
+    }
+  
+    &:hover::before {
+      opacity: 1;
+    }
+  }
+  
 
 :host::before {
     &.merc-primary{

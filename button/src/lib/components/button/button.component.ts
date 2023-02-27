@@ -9,9 +9,10 @@ import { primary } from './button.component.stories';
   host: {
     '[class.merc-primary]': 'color === "primary"',
     '[class.merc-secondary]': 'color === "secondary"',
+    '[class.merc-subtle]': 'color === "subtle"',
   }
 })
 export class MercButtonComponent {
 
-  @Input() color : 'primary' | 'secondary' = 'primary';
+  @Input() color : 'primary' | 'secondary' | 'subtle' = 'primary';
 }

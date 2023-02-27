@@ -30,3 +30,8 @@ export const secondary = Template.bind({});
 secondary.args ={
   color: 'secondary'
 }
+export const subtle = Template.bind({});
+
+subtle.args ={
+  color: 'subtle'
+}
